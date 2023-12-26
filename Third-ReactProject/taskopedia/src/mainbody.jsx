@@ -1,3 +1,5 @@
+import Student from './student';
+
 export default function MainBody() {
     const whatWeWillLearn = "React JS";
     const lectureCount = 3;
@@ -11,10 +13,12 @@ export default function MainBody() {
         <li>TEST 2</li>
         <li>TEST 3</li>
       </ul>
+      <div className='container-fluid row'>Students Enrolled</div>
+        <Student experience={2} name='Kris Walley' />
+        <Student experience={10} name='John Doe' />
       {/* <div>
         Enter Task: <input className='form-control' maxLength={20} placeholder='Enter Notes' readOnly={false}/>
       </div> */}
-      <br />
     </div>
     )
   }
