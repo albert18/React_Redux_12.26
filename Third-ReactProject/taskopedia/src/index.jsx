@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom/client';
 import "./CSS/style.css";
-import Header from './header';
+import Header from './Layout/header';
 import Student from './student';
 import MainBody from './mainbody';
-import MainFooter from './footer';
+import MainFooter from './Layout/footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
