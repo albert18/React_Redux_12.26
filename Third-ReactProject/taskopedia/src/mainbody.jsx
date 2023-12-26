@@ -1,5 +1,5 @@
-import Student from './student';
-import StudentReview from './StudentReview';
+import Student from './Components/Student/student';
+import StudentReview from './Components/Student/StudentReview';
 
 export default function MainBody() {
     const whatWeWillLearn = "React JS";
