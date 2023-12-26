@@ -1,4 +1,5 @@
 import Student from './student';
+import StudentReview from './StudentReview';
 
 export default function MainBody() {
     const whatWeWillLearn = "React JS";
@@ -14,8 +15,10 @@ export default function MainBody() {
         <li>TEST 3</li>
       </ul>
       <div className='container-fluid row'>Students Enrolled</div>
-        <Student experience={2} name='Kris Walley' />
-        <Student experience={10} name='John Doe' />
+        <Student experience={2} name='Kris Walley'>
+          <StudentReview/>
+        </Student>
+        <Student experience={10} name='John Doe'></Student>
       {/* <div>
         Enter Task: <input className='form-control' maxLength={20} placeholder='Enter Notes' readOnly={false}/>
       </div> */}

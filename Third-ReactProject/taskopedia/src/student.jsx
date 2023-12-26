@@ -7,7 +7,14 @@ export default function Student(props) { // Props keyword is a fix name, use thi
           <div className='col-2'>
             <img src={faker.image.people()} className='w-100'></img>
           </div>
-          <div className='col-10'>Programming Experience {props.experience} years</div>
+          <div className='col-6'>
+            {props.name}
+            <br />
+            Programming Experience {props.experience} years
+            </div>
+          <div className='col-2'>
+          {props.children}  
+          </div>
         </div>
       </div>
     )
