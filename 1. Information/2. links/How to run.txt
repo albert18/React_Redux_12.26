@@ -1,0 +1,9 @@
+1. Install node.js
+    https://nodejs.org/en
+2. Create an app in the command-line. Follow the steps!
+    https://create-react-app.dev/
+
+Note: You will have to upgrade to the correct version. Follow the instructions or the error log in the CMD.
+
+
+
