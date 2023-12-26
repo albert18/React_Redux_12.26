@@ -18,7 +18,7 @@ function MainHeader() {
     return(<p style={subHeaderStyle}>SUB-HEADING</p>)
   }
   
-  export default function Header() {
+  const Header = () => {
     return(
       <div>
         <MainHeader></MainHeader>
@@ -26,3 +26,5 @@ function MainHeader() {
       </div>
     )
   }
+
+export default Header;
