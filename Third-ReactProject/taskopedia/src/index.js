@@ -8,7 +8,7 @@ import MainFooter from './footer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <div>
+  <div style={{backgroundColor:'gray'}}>
     <Header />
     <MainBody />
     <div className='container-fluid row'>Students Enrolled</div>

@@ -2,7 +2,7 @@ export default function MainBody() {
     const whatWeWillLearn = "React JS";
     const lectureCount = 3;
     return(
-    <div>
+    <div style={{minHeight: "70vh"}}>
       <p>In this course, we we learn {whatWeWillLearn} by building TaskOPedia!</p>
       Total Lecture - 3
       <br />
