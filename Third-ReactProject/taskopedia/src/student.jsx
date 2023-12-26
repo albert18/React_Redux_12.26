@@ -1,4 +1,4 @@
-export default function Student(props) {
+export default function Student(props) { // Props keyword is a fix name, use this to pass in the parameters.
     return(
       <div className='container p-4'>
         <div className='row border p-1'>
