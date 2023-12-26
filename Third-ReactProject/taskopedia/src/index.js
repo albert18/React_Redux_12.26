@@ -34,10 +34,10 @@ function MainFooter() {
 }
 
 root.render(
-  <div className='container'>
+  <div>
     <Header />
     <MainBody />
-    <div className='row'>Students Enrolled</div>
+    <div className='container-fluid row'>Students Enrolled</div>
     <Student experience={2} name='Kris Walley' />
     <Student experience={10} name='John Doe' />
     <MainFooter />
