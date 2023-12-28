@@ -10,15 +10,16 @@ export default class Counter extends React.Component{
         }
     }
 
-    handleAttack() {
+    handleAttack = () => {
         // this.setState((previousState) => {
         //     return {
         //         count: previousState.count + 10,
         //     }
         // });
         this.setState((previousState) => {
+            let newCount = previousState.count + Math.round(Math.random() * 10);
             return {
-                count: previousState.count + 1,
+                count: newCount,
             }
         });
         // Old Syntaxs
@@ -26,13 +27,24 @@ export default class Counter extends React.Component{
         // this.setState({count: this.state.count + 1});
     }
 
-    defendAttack() {
+    defendAttack = () => {
         // this.setState({count: this.state.count - 1});
         this.setState((previousState) => {
+            let newCount = previousState.count - Math.round(Math.random() * 10);
             return {
-                count: previousState.count - 1,
+                //count: previousState.count - 1,
+                count: newCount,
             }
         });
+    }
+
+    handleRandomPlay = () => {
+        let playMode = Math.round(Math.random());
+        if (playMode==0) {
+            this.handleAttack();
+        } else {
+            this.defendAttack();
+        }
     }
 
     render() {
@@ -42,9 +54,11 @@ export default class Counter extends React.Component{
             <p>You win a +10 points and lose at -10 points!</p>
             <p>Lets Play:</p>
             <h3>Game Status:</h3>
-            
+
             <button onClick={this.handleAttack} style={{ width: "200px"}}>+1</button>
             <button onClick={this.defendAttack} style={{ width: "200px"}}>-1</button>
+            
+            <button onClick={this.handleRandomPlay} style={{ width: "200px"}}>Reset</button>
         </div>) 
     }
 }
