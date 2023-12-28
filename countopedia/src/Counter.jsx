@@ -11,7 +11,19 @@ export default class Counter extends React.Component{
     }
 
     handleAttack() {
-        this.setState({count: this.state.count + 1});
+        this.setState((previousState) => {
+            return {
+                count: previousState.count + 10,
+            }
+        });
+        this.setState((previousState) => {
+            return {
+                count: previousState.count + 1,
+            }
+        });
+        // Old Syntaxs
+        // this.setState({count: this.state.count + 10});
+        // this.setState({count: this.state.count + 1});
     }
 
     defendAttack() {
