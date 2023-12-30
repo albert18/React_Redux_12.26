@@ -14,7 +14,6 @@ export default class AddContact extends React.Component {
         this.props.handleAddContact();
     }
 
-
     render() {            
         return (
             <div className="border row text-white p-2">
