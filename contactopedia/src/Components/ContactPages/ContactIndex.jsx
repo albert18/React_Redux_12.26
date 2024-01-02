@@ -31,6 +31,16 @@ class ContactIndex extends React.Component {
     }
 
     handleAddContact = (newContact) => {
+        const newFinalContact = {
+            ...newContact, 
+            id: this.state.ContactList[this.state.ContactList.length-1].id + 1, 
+            isFavorite: false,
+        };
+        this.setState((prevState) => {
+            return {
+                ContactList: prevState.ContactList.concat([newFinalContact]),
+            }
+        });
         alert("TEST");
     };
 
