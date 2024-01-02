@@ -30,7 +30,7 @@ class ContactIndex extends React.Component {
         }
     }
 
-    handleAddContact = () => {
+    handleAddContact = (newContact) => {
         alert("TEST");
     };
 
