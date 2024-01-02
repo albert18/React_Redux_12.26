@@ -31,17 +31,33 @@ class ContactIndex extends React.Component {
     }
 
     handleAddContact = (newContact) => {
-        const newFinalContact = {
-            ...newContact, 
-            id: this.state.ContactList[this.state.ContactList.length-1].id + 1, 
-            isFavorite: false,
-        };
-        this.setState((prevState) => {
-            return {
-                ContactList: prevState.ContactList.concat([newFinalContact]),
+        if (newContact.name == "") {
+            return {status: "failure", msg: "Please Enter A Valid Name"}
+        } else if (newContact.phone == "") {
+            return {status: "failure", msg: "Please Enter A Valid Phone Number"}
+        }
+
+        const duplicateRecord = this.state.ContactList.filter((x) => {
+            if (x.name == newContact.name || x.phone == newContact.phone) {
+                return true;
             }
         });
-        alert("TEST");
+        
+        if(duplicateRecord.length > 0) {
+            return {status: "failure", msg: "Duplicate Record"}
+        } else {
+            const newFinalContact = {
+                ...newContact, 
+                id: this.state.ContactList[this.state.ContactList.length-1].id + 1, 
+                isFavorite: false,
+            };
+            this.setState((prevState) => {
+                return {
+                    ContactList: prevState.ContactList.concat([newFinalContact]),
+                }
+            });
+            return {status: "success", msg: "Contact was added successfully!"}
+        }
     };
 
     render() {
