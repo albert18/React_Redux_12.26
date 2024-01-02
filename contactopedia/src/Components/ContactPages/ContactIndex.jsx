@@ -34,7 +34,6 @@ class ContactIndex extends React.Component {
         alert("TEST");
     };
 
-
     render() {
         return (
             <div>
