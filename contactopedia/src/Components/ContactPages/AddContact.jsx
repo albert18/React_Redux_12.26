@@ -17,7 +17,7 @@ export default class AddContact extends React.Component {
         const response = this.props.handleAddContact({name:name, email:email, phone:phone});
 
         if (response.status == "success") {
-            this.setState({errorMessage: undefined, msg: response.msg}); 
+            this.setState({successMessage: undefined, msg: response.msg}); 
             document.querySelector(".contact-form").reset();
         } else {
             this.setState({errorMessage: response.msg, msg: undefined});
@@ -39,6 +39,17 @@ export default class AddContact extends React.Component {
                         <div className="col-12 col-md-4 p-1">
                             <input type="text" className="form-control form-control-sm" placeholder="Phone..." name="contactPhone"/>
                         </div>
+                        {this.state.errorMessage==undefined ? (<div></div>) : (
+                            <div className="col-12 text-center text-danger">
+                                {this.state.errorMessage }
+                            </div>
+                        )}
+
+                        {this.state.successMessage==undefined ? (<div></div>) : (
+                            <div className="col-12 text-center text-success">
+                                {this.state.successMessage }
+                            </div>
+                        )}
                         <div className="col-12 col-md-6 offset-md-3 p-1">
                             <button className="btn btn-primary btn-sm form-control">Create</button>
                         </div>
