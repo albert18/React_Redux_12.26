@@ -1,1 +1,9 @@
 Website: https://axios-http.com/docs/intro
+
+
+1. npm install axios
+
+
+
+
+Note: you can use https://random-data-api.com/documentation TO GET SOME SAMPLE JSON DATA.
