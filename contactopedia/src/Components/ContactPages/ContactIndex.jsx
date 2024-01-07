@@ -26,7 +26,9 @@ class ContactIndex extends React.Component {
                     email: "Jen@sample.com",
                     isFavorite: false,
                 },
-            ]
+            ],
+            selectedContact: undefined,
+            isUpdating: false,
         }
     }
 
@@ -104,6 +106,17 @@ class ContactIndex extends React.Component {
         });
     };
 
+    handleUpdateClick = (contact) => {
+    //   debugger;
+
+      this.setState((prevState) => {
+        return {
+            selectedContact: contact,
+            isUpdating: true,
+        };
+      }); 
+    };
+
     render() {
         return (
             <div>
@@ -128,6 +141,7 @@ class ContactIndex extends React.Component {
                                 <FavoriteContacts contacts={this.state.ContactList.filter((u)=> u.isFavorite==true)} 
                                 favoriteClick={this.handleToggleFavorite}
                                 deleteContact={this.handleDeleteContact}
+                                updateClick={this.handleUpdateClick}
                                 />
                             </div>
                         </div>
@@ -136,6 +150,7 @@ class ContactIndex extends React.Component {
                                 <GeneralContacts contacts={this.state.ContactList.filter((u)=> u.isFavorite==false)} 
                                 favoriteClick={this.handleToggleFavorite}
                                 deleteContact={this.handleDeleteContact}
+                                updateClick={this.handleUpdateClick}
                                 />
                             </div>
                         </div>
