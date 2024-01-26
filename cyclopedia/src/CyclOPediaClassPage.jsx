@@ -1,4 +1,5 @@
 import React from 'react';
+import { getRandomUser } from "./Utility/api";
 
 class CyclOpediaClassPage extends React.Component {
     constructor(props) {
@@ -11,8 +12,10 @@ class CyclOpediaClassPage extends React.Component {
         }
     }
 
-    componentDidMount(){
-        console.log("Component did Mount");
+    componentDidMount = async() => {
+        debugger;
+        const response = await getRandomUser();
+        console.log(response);
     }
 
     componentDidUpdate(){
