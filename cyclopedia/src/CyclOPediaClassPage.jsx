@@ -15,20 +15,26 @@ class CyclOpediaClassPage extends React.Component {
     }
 
     componentDidMount = async() => {
-        const response = await getRandomUser();
-        this.setState(() => {
-            return {
-                instructor: {
-                    name: response.data.first_name + " " + response.data.last_name,
-                    email: response.data.email,
-                    phone: response.data.phone_number,
-                },
-            };
-        });
+        debugger;
+        if(JSON.parse(localStorage.getItem("cyclopediaState"))) {
+            this.setState(JSON.parse(localStorage.getItem("cyclopediaState")));
+        } else {
+            const response = await getRandomUser();
+            this.setState(() => {
+                return {
+                    instructor: {
+                        name: response.data.first_name + " " + response.data.last_name,
+                        email: response.data.email,
+                        phone: response.data.phone_number,
+                    },
+                };
+            });   
+        }
     }
 
     componentDidUpdate() {
         console.log("DID UPDATE");
+        localStorage.setItem("cyclopediaState", JSON.stringify(this.state) );
     }
 
     componentWillUnmount() {
