@@ -31,6 +31,22 @@ class CyclOpediaClassPage extends React.Component {
     componentWillUnmount() {
     }
 
+    handleAddStudent = () => {
+        this.setState((prevState) => {
+            return {
+                studentCount: prevState.studentCount + 1,
+            }
+        });
+    }
+
+    handleRemoveStudent = () => {
+        this.setState((prevState) => {
+            return {
+                studentCount: 0,
+            }
+        });
+    }
+
     render() {
         return(
             <div>
@@ -49,9 +65,9 @@ class CyclOpediaClassPage extends React.Component {
                 <div className='p-3'>
                     <span className='h4 text-success'>Students</span>
                     <div>Student Count : {this.state.studentCount}</div>
-                    <button className='btn btn-success btn-sm'>Add Student</button>
+                    <button className='btn btn-success btn-sm' onClick={this.handleAddStudent}>Add Student</button>
                      &nbsp;   
-                    <button className='btn btn-danger btn-sm'>remove Student</button>
+                    <button className='btn btn-danger btn-sm' onClick={this.handleRemoveStudent}>Remove All Student</button>
                 </div>
             </div>
         );
