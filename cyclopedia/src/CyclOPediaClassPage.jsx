@@ -3,36 +3,52 @@ import { getRandomUser } from "./Utility/api";
 
 class CyclOpediaClassPage extends React.Component {
     constructor(props) {
-        super(props); 
+        super(props);
         this.state={
             instructor: undefined,
-            studentList: [],
-            studentCount: 0,
-            hideInstructor: false
+            studentlist:[],
+            studentCount:0,
+            hideInstructor:false,
         }
     }
 
-    componentDidMount = async() => {
-        debugger;
+    componentDidMount = async()=>{ // this is a life cycle method.                            !!!!THIS HAPPENS 1st!!!
+        debugger
+        console.log("Component Did Mount") //adding logging just to see when they're fired 
         const response = await getRandomUser();
-        console.log(response);
+
+        this.setState((prevState) => {
+            return {
+                intructor: {
+                    name: response.data.first_name + " " + response.data.last_name,
+                    email: response.data.email,
+                    phone: response.data.phone_number,
+                }
+            };
+        });
+
+        console.log(this.instructor);
+
     }
 
-    componentDidUpdate(){
-        console.log("Component did Update");
-    }
-
-    componentWillUnmount(){
-        console.log("Component did Unmount");
-    }
 
     render() {
         console.log("Render Component");
-        return(
-            <div>
-                hello
-            </div>
-        ) 
+        return(<div> 
+                {this.state.instructor && ( 
+                <div className='p-3'> 
+                    <span className='h4 text-success'>Instructor</span>  
+                    <i className='bi bi-toggle-off btn btn-success btn-sm'></i> 
+                    <br/> 
+                    Name: {this.state.instructor.name}
+                    <br/> 
+                    Email: {this.state.instructor.email}
+                    <br/> 
+                    Phone: {this.state.instructor.phone}
+                    <br/>
+                </div>
+            )}
+        </div>) 
 
     }
 }
