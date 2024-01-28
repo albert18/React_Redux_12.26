@@ -9,6 +9,8 @@ class CyclOpediaClassPage extends React.Component {
             studentlist:[],
             studentCount:0,
             hideInstructor:false,
+            inputName: "",
+            inputFeedback: "",
         }
     }
 
@@ -26,9 +28,11 @@ class CyclOpediaClassPage extends React.Component {
     }
 
     componentDidUpdate() {
+        console.log("DID UPDATE");
     }
 
     componentWillUnmount() {
+        console.log("DID UNMOUNT");
     }
 
     handleAddStudent = () => {
@@ -63,6 +67,26 @@ class CyclOpediaClassPage extends React.Component {
                     </div>
                 )}
                 <div className='p-3'>
+                    <span className='h4 text-success'>Feedback</span>
+                    <br />
+                    <input className='form-control' 
+                        value={this.state.inputName}
+                        onChange={(e)=> {
+                            this.setState({inputName: e.target.value });
+                        }}
+                        type="text" 
+                        placeholder='Name...'/>
+                    <br />
+                    <textarea className='form-control' 
+                        value={this.state.inputFeedback}
+                        onChange={(e)=> {
+                            this.setState({inputFeedback: e.target.value });
+                        }}
+                        placeholder='Feedback...'>
+
+                    </textarea>
+                </div>
+                <div className='p-3'>
                     <span className='h4 text-success'>Students</span>
                     <div>Student Count : {this.state.studentCount}</div>
                     <button className='btn btn-success btn-sm' onClick={this.handleAddStudent}>Add Student</button>
@@ -72,7 +96,6 @@ class CyclOpediaClassPage extends React.Component {
             </div>
         );
     }
-
 }
 
 export default CyclOpediaClassPage;
