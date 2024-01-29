@@ -73,7 +73,8 @@ class CyclOpediaClassPage extends React.Component {
             <div>
                 <div className='p3'>
                     <span className='h4 text-success'>Instructor</span>
-                    <i className='bi bi-toggle-off  btn btn-success btn-sm' onClick={this.handleToggleInstructor}></i>
+                    <i className={`bi ${this.state.hideInstructor ? "bi-toggle-off  btn btn-success btn-sm" : "bi-toggle-on  btn btn-success btn-sm"} `} 
+                    onClick={this.handleToggleInstructor}></i>
                     {!this.state.hideInstructor ? (
                         <Instructor instructor={this.state.instructor} />   
                     ) : null}
