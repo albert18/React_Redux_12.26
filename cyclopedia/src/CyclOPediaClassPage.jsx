@@ -9,14 +9,13 @@ class CyclOpediaClassPage extends React.Component {
             instructor: undefined,
             studentlist:[],
             studentCount:0,
-            hideInstructor:false,
+            hideInstructor:true,
             inputName: "",
             inputFeedback: "",
         }
     }
 
     componentDidMount = async() => {
-        debugger;
         if(JSON.parse(localStorage.getItem("cyclopediaState"))) {
             this.setState(JSON.parse(localStorage.getItem("cyclopediaState")));
         } else {
@@ -34,6 +33,8 @@ class CyclOpediaClassPage extends React.Component {
     }
 
     componentDidUpdate() {
+        debugger
+        console.log(this.state.hideInstructor)
         console.log("DID UPDATE");
         localStorage.setItem("cyclopediaState", JSON.stringify(this.state) );
     }
@@ -58,10 +59,25 @@ class CyclOpediaClassPage extends React.Component {
         });
     }
 
+    handleToggleInstructor = () => {
+        debugger;
+        this.setState((prevState) => {
+            return {
+                hideInstructor: !prevState.hideInstructor,
+            }
+        });
+    }
+    
     render() {
         return(
             <div>
-                {this.state.instructor && <Instructor instructor={this.state.instructor}/> }
+                <div className='p3'>
+                    <span className='h4 text-success'>Instructor</span>
+                    <i className='bi bi-toggle-off  btn btn-success btn-sm' onClick={this.handleToggleInstructor}></i>
+                    {!this.state.hideInstructor ? (
+                        <Instructor instructor={this.state.instructor} />   
+                    ) : null}
+                </div>
                 <div className='p-3'>
                     <span className='h4 text-success'>Feedback</span>
                     <br />
@@ -79,7 +95,6 @@ class CyclOpediaClassPage extends React.Component {
                             this.setState({inputFeedback: e.target.value });
                         }}
                         placeholder='Feedback...'>
-
                     </textarea>
                 </div>
                 <div className='p-3'>
