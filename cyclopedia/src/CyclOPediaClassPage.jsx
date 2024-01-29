@@ -32,11 +32,13 @@ class CyclOpediaClassPage extends React.Component {
         }
     }
 
-    componentDidUpdate() {
-        debugger
-        console.log(this.state.hideInstructor)
-        console.log("DID UPDATE");
+    componentDidUpdate = async (previousProps, prevState) => {
+
+
         localStorage.setItem("cyclopediaState", JSON.stringify(this.state) );
+        console.log("Old State - " + prevState.studentCount)
+        console.log("New State - " + this.state.studentCount)
+
     }
 
     componentWillUnmount() {
@@ -104,6 +106,12 @@ class CyclOpediaClassPage extends React.Component {
                     <button className='btn btn-success btn-sm' onClick={this.handleAddStudent}>Add Student</button>
                      &nbsp;   
                     <button className='btn btn-danger btn-sm' onClick={this.handleRemoveStudent}>Remove All Student</button>
+                    
+                    {this.state.studentlist.map((student, index) => {
+                        return(
+                            <div className='text-white' key={index}>{student.name}</div>
+                        )
+                    })}
                 </div>
             </div>
         );
