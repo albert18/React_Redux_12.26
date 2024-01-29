@@ -33,12 +33,27 @@ class CyclOpediaClassPage extends React.Component {
     }
 
     componentDidUpdate = async (previousProps, prevState) => {
-
-
         localStorage.setItem("cyclopediaState", JSON.stringify(this.state) );
         console.log("Old State - " + prevState.studentCount)
         console.log("New State - " + this.state.studentCount)
-
+        if(prevState.studentCount < this.state.studentCount) {
+            const response = await getRandomUser();
+            this.setState((prevState) => {
+                return {
+                    studentlist: [
+                        ...prevState.studentlist, {
+                            name: response.data.first_name + " " + response.data.last_name,
+                        },
+                    ],
+                };
+            });
+        } else if(prevState.studentCount > this.state.studentCount) {
+            this.setState((prevState) => {
+                return {
+                    studentlist: [],
+                };
+            });
+        }
     }
 
     componentWillUnmount() {
@@ -77,7 +92,7 @@ class CyclOpediaClassPage extends React.Component {
                     <span className='h4 text-success'>Instructor</span>
                     <i className={`bi ${this.state.hideInstructor ? "bi-toggle-off  btn btn-success btn-sm" : "bi-toggle-on  btn btn-success btn-sm"} `} 
                     onClick={this.handleToggleInstructor}></i>
-                    {!this.state.hideInstructor ? (
+                    {!this.state.hideInstructor && this.state.instructor ? (
                         <Instructor instructor={this.state.instructor} />   
                     ) : null}
                 </div>
