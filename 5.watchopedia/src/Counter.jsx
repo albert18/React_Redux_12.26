@@ -8,6 +8,9 @@ const Counter = () => {
         return {counter: 10, title: "Fun Counter"};
     });
 
+    // You are not only bound with one state. You can also use multiple state.
+    // const [titleState, setTitleState] = useState("Fun Counter");
+
     function incrementCounter() {
         setCounterState((prevState) => {
             return { ...prevState, counter: prevState.counter + 1 };
