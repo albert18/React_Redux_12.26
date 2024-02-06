@@ -34,8 +34,6 @@ class CyclOpediaClassPage extends React.Component {
 
     componentDidUpdate = async (previousProps, prevState) => {
         localStorage.setItem("cyclopediaState", JSON.stringify(this.state) );
-        console.log("Old State - " + prevState.studentCount)
-        console.log("New State - " + this.state.studentCount)
         if(prevState.studentCount < this.state.studentCount) {
             const response = await getRandomUser();
             this.setState((prevState) => {
