@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const Counter = () => {
-
     //const [counter, setCounter] = useState(10);  :: The different is when it execution, check console.log to see whats going on.
     const [counter, setCounter] = useState(() => {
         console.log("hello")
