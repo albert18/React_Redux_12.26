@@ -2,20 +2,22 @@ import { useState } from "react";
 
 const Counter = () => {
     //const [counter, setCounter] = useState(10);  :: The different is when it execution, check console.log to see whats going on.
-    const [counter, setCounter] = useState(() => {
+    const [counterState, setCounterState] = useState(() => {
         console.log("hello")
-        return 10;
+        //return 10;
+        return {counter: 10};
     });
 
     function incrementCounter() {
-        setCounter((prevState) => {
-            return prevState + 1;
+        setCounterState((prevState) => {
+            //return prevState + 1;
+            return { counter: prevState.counter + 1 };
         });
     };
 
     function decrementCounter() {
-        setCounter((prevState) => {
-            return prevState - 1;
+        setCounterState((prevState) => {
+            return { counter: prevState.counter - 1 };
         });
     };
     return (
@@ -26,7 +28,7 @@ const Counter = () => {
             <br />
             <span className="h4">
                 Counter: &nbsp;
-                <span className="text-success">{counter}</span>
+                <span className="text-success">{counterState.counter}</span>
             </span>
         </div>
     );
