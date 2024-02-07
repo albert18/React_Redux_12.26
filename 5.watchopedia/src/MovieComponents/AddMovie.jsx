@@ -5,8 +5,6 @@ const AddMovie = (props) => {
     const [name, setName] = useState("");
 
     function submitAddMovieForm(e, props) {
-        debugger
-
         e.preventDefault();
         props.handleAddMovie(name);
         setName("");
