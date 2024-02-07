@@ -1,6 +1,14 @@
-const MovieList = () => {
+const MovieList = (props) => {
+
+    debugger
+    console.log(props);
+
     return (
-        <div></div>
+        <div className="text-white">
+            {props.movieList.map((movie, index) => {
+                return <div key={index}>{movie}</div>
+            })}
+        </div>
     );
 };
 export default MovieList;
