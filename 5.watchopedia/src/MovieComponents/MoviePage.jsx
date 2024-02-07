@@ -5,12 +5,25 @@ import MovieList from "./MovieList";
 const MoviePage = () => {
 
     const [movieState, setMovieState] = useState(() => {
-        return { MovieList:["Die Hard", "Harry Potter"]}
+        return { movieList:["Die Hard", "Harry Potter"]}
     });
+
+    function handleAddMovie(newMovie) {
+        debugger;
+
+        setMovieState((prevState) => {
+            return {
+                ...prevState,
+                movieList: prevState.movieList.concat([newMovie]),
+            };
+        });
+        debugger
+    }
+
     return (
         <div className="container col-12 col-md-6 my-3 border">
-            <AddMovie />
-            <MovieList movieList={movieState.MovieList} />
+            <AddMovie handleAddMovie={handleAddMovie}/>
+            <MovieList movieList={movieState.movieList} />
         </div>
     ); 
 };

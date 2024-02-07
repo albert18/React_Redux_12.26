@@ -1,8 +1,4 @@
 const MovieList = (props) => {
-
-    debugger
-    console.log(props);
-
     return (
         <div className="text-white">
             {props.movieList.map((movie, index) => {
