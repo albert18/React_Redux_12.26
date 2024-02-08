@@ -20,10 +20,10 @@ root.render(
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         {/* Product pages */}
-        <Route path="/createproduct" element={<CreateProduct />}></Route>
-        <Route path="/product" element={<Product />}></Route>
-        <Route path="/productdetails" element={<ProductDetails />}></Route>
-        <Route path="/productlist" element={<ProductList />}></Route>
+        <Route path="/product/createproduct" element={<CreateProduct />}></Route>
+        <Route path="/product/create" element={<Product />}></Route>
+        <Route path="/product/productdetails" element={<ProductDetails />}></Route>
+        <Route path="/product/productlist" element={<ProductList />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
