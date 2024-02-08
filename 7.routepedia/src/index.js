@@ -29,6 +29,7 @@ root.render(
           <Route path="productdetails" element={<ProductDetails />}></Route>
           <Route path="productlist" element={<ProductList />}></Route>
         </Route>
+        {/* Not found make sure to add the route in the root component */}
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
