@@ -28,9 +28,10 @@ function Header() {
                                 More Information
                                 </button>
                                 <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Link 1</a></li>
-                                <li><a className="dropdown-item" href="#">Link 2</a></li>
-                                <li><a className="dropdown-item" href="#">Link 3</a></li>
+                                <li><Link className="dropdown-item" to="/createproduct">Create New Product</Link></li>
+                                <li><Link className="dropdown-item" to="/product">Product</Link></li>
+                                <li><Link className="dropdown-item" to="/productdetails">Product Details</Link></li>
+                                <li><Link className="dropdown-item" to="/productlist">Product List</Link></li>
                                 </ul>
                             </div>
                         </li>
