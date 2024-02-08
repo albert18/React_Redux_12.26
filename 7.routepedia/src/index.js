@@ -9,6 +9,7 @@ import Product from './Pages/Product';
 import ProductDetails from './Pages/ProductDetails';
 import ProductList from './Pages/ProductList';
 import NotFound from './NotFound';
+import CryptoDetail from './CryptoDetail';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,6 +21,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/cryptodetail/:cryptoSymbol" element={<CryptoDetail />}></Route>
         {/* Product pages */}
 
         <Route path="product">

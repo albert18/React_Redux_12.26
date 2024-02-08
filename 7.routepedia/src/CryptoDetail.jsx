@@ -1,8 +1,13 @@
 import React from 'react'
+import { useParams}  from 'react-router-dom';
 
 function CryptoDetail() {
+  const { cryptoSymbol } = useParams();
   return (
-    <div>CryptoDetail</div>
+    <div>
+      <h4>Cryto Details</h4>
+      <p>Symbol: {cryptoSymbol}</p>
+    </div>
   )
 }
 
