@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from './images/react.png'
 
 function Header() {
@@ -14,13 +14,13 @@ function Header() {
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             {/* <a className="nav-link" href="/">Home</a> */}
-                            <Link className="nav-link" to="/">Home</Link>
+                            <NavLink className="nav-link" to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">About</Link>
+                            <NavLink className="nav-link" to="/about">About</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/cryptodetail/eth/2">Cryto Details</Link>
+                            <NavLink className="nav-link" to="/cryptodetail/eth/2">Cryto Details</NavLink>
                         </li>
                         <li>
                             <div className="dropdown">
@@ -29,9 +29,9 @@ function Header() {
                                 </button>
                                 <ul className="dropdown-menu">
                                 <li><Link className="dropdown-item" to="/product">Product</Link></li>
-                                <li><Link className="dropdown-item" to="/product/create">Create New Product</Link></li>
-                                <li><Link className="dropdown-item" to="/product/details">Product Details</Link></li>
-                                <li><Link className="dropdown-item" to="/product/productlist">Product List</Link></li>
+                                <li><NavLink className="dropdown-item" to="/product/create">Create New Product</NavLink></li>
+                                <li><NavLink className="dropdown-item" to="/product/details">Product Details</NavLink></li>
+                                <li><NavLink className="dropdown-item" to="/product/productlist">Product List</NavLink></li>
                                 </ul>
                             </div>
                         </li>
