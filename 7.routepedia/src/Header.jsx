@@ -28,8 +28,8 @@ function Header() {
                                 More Information
                                 </button>
                                 <ul className="dropdown-menu">
-                                <li><Link className="dropdown-item" to="/product/createproduct">Create New Product</Link></li>
-                                <li><Link className="dropdown-item" to="/product/create">Product</Link></li>
+                                <li><Link className="dropdown-item" to="/product/create">Create New Product</Link></li>
+                                <li><Link className="dropdown-item" to="/product/product">Product</Link></li>
                                 <li><Link className="dropdown-item" to="/product/productdetails">Product Details</Link></li>
                                 <li><Link className="dropdown-item" to="/product/productlist">Product List</Link></li>
                                 </ul>

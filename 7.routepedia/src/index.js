@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './Header';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import CreateProduct from './Pages/CreateProduct';
@@ -20,10 +20,14 @@ root.render(
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         {/* Product pages */}
-        <Route path="/product/createproduct" element={<CreateProduct />}></Route>
-        <Route path="/product/create" element={<Product />}></Route>
-        <Route path="/product/productdetails" element={<ProductDetails />}></Route>
-        <Route path="/product/productlist" element={<ProductList />}></Route>
+
+        <Route path="product">
+          <Route path="create" element={<CreateProduct />}></Route>
+          <Route path="product" element={<Product />}></Route>
+          <Route path="productdetails" element={<ProductDetails />}></Route>
+          <Route path="productlist" element={<ProductList />}></Route>
+        </Route>
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
