@@ -29,7 +29,7 @@ root.render(
           {/* index or path */}
           <Route index element={<Product />}></Route> 
           <Route path="create" element={<CreateProduct />}></Route>
-          <Route path="productdetails" element={<ProductDetails />}></Route>
+          <Route path="details/:productId" element={<ProductDetails />}></Route>
           <Route path="productlist" element={<ProductList />}></Route>
         </Route>
         {/* Not found make sure to add the route in the root component */}

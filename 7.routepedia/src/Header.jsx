@@ -30,7 +30,7 @@ function Header() {
                                 <ul className="dropdown-menu">
                                 <li><Link className="dropdown-item" to="/product">Product</Link></li>
                                 <li><Link className="dropdown-item" to="/product/create">Create New Product</Link></li>
-                                <li><Link className="dropdown-item" to="/product/productdetails">Product Details</Link></li>
+                                <li><Link className="dropdown-item" to="/product/details">Product Details</Link></li>
                                 <li><Link className="dropdown-item" to="/product/productlist">Product List</Link></li>
                                 </ul>
                             </div>
