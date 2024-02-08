@@ -21,6 +21,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/cryptodetail/:cryptoSymbol/:id" element={<CryptoDetail />}></Route>
         <Route path="/cryptodetail/:cryptoSymbol" element={<CryptoDetail />}></Route>
         {/* Product pages */}
 
