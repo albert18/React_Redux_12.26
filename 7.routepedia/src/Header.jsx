@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from './images/react.png'
 
 function Header() {
@@ -12,13 +13,14 @@ function Header() {
                 <div className="container-fluid">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Home</a>
+                            {/* <a className="nav-link" href="/">Home</a> */}
+                            <Link className="nav-link" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Link 2</a>
+                            <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Link 3</a>
+                            <a className="nav-link" href="#">Cryto Details</a>
                         </li>
                         <li>
                             <div className="dropdown">
