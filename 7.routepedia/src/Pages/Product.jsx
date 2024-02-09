@@ -20,8 +20,8 @@ function Product() {
 
       <br />
 
-      { goToProduct && <Navigate to="/product/details/3"/> }
-      <button className='form-control' onClick={() => { setGoProduct({ goToProduct: true })}}>Navigate to Product - 3 (useState) </button>
+      {/* { goToProduct && <Navigate to="/product/details/3"/> }
+      <button className='form-control' onClick={() => { setGoProduct({ goToProduct: true })}}>Navigate to Product - 3 (useState) </button> */}
 
 
 
