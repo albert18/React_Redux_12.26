@@ -3,11 +3,21 @@ import { counterReducer } from "./slice/counterSlice";
 
 export const store = configureStore({
     reducer: {
-        counter: counterReducer
+        counterStore: counterReducer,
         // We will fill this reducer in the upcoming videos
     }
     
 });
 
-debugger;
-console.trace(store);
+console.log(store.getState());
+
+
+
+
+
+
+// use toolkit for better approach
+// store.dispatch({
+//     type: 'counter/increment',
+// });
+// console.log(store.getState());
