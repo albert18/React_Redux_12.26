@@ -6,11 +6,10 @@ export const store = configureStore({
         counterStore: counterReducer,
         // We will fill this reducer in the upcoming videos
     }
-    
+
 });
 
 console.log(store.getState());
-
 
 
 
