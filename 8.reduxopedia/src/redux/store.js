@@ -10,8 +10,7 @@ export const store = configureStore({
     }
 });
 
-debugger;
-console.log(store.getState());
+
 
 
 
