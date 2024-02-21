@@ -12,7 +12,10 @@ root.render(
     <Provider store={store}>
       <Header />
       <Counter />
-      <DestinationList />
+      <div className='p-4 border text-center'>
+        <h4 className='text-success'>Destination List</h4>
+        <DestinationList />
+      </div>
     </Provider>
   </div>
 );
